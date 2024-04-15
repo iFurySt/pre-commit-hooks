@@ -43,6 +43,12 @@ TESTS = (
         0,
         id='ignore nested fstrings',
     ),
+    pytest.param(
+        'f"Error during task loop"',
+        "f'Error during task loop'",
+        1,
+        id='replace the fstrings when python version is greater than and equal to 3.12',
+    ),
 )
 
 
