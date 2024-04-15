@@ -66,7 +66,7 @@ def fix_strings(filename: str) -> int:
             fstring_depth -= 1
             fstring_content = token_text + fstring_content
             f_erow, f_ecol = erow, ecol
-        elif fstring_depth != 0:
+        elif fstring_depth != 0:  # pragma: >=3.12 cover
             fstring_content = token_text + fstring_content
         elif fstring_depth == 0 and token_type == tokenize.STRING:
             new_text = handle_match(token_text)
